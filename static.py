@@ -8,5 +8,4 @@ MENU = """Choose function:
 7. Delete account from site
 8. Delete site with all accounts"""
 
-NEW_VAULT = """
-"""
+NEW_KEYS = "Generating new keys pare"
