@@ -18,5 +18,5 @@ else:
     generate_keys_pare()  
 
 #Check that command-line param exist
-# If exist - go to the "automated.py"
-# If not - "go to the interactive.py"
+# If exist - go to the "automated.py" (there are we call functions from vault.py with arguments that we enter in command promt)
+# If not - "go to the interactive.py" (there are we call functios from vault.py after programm ask as neeaded functions, desired variable values, etc)
