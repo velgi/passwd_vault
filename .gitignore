@@ -3,5 +3,6 @@ vault_public_key
 vault.enc
 
 __pycache__
+.idea
 
 test*.py
