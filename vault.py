@@ -1,15 +1,23 @@
 """Functions for interactions with vault"""
 
 
-def add_site(new_site, new_user):
+def list_sites():
     pass
 
 
-def del_site(deleting_site):
+def list_site_accounts(site):
     pass
 
 
-def add_account():
+def add_account(account_name):
+    pass
+
+
+def show_passwd():
+    pass
+
+
+def change_passwd():
     pass
 
 
@@ -17,5 +25,9 @@ def del_account():
     pass
 
 
-def change_passwd():
+def add_site(new_site):
+    pass
+
+
+def del_site(deleting_site):
     pass

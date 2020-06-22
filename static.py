@@ -1,8 +1,8 @@
 MENU = """Choose function:
 1. List all sites
 2. List accounts for site 
-3. Add new site
-4. Add new account
+3. Add new account
+4. Add new site
 5. Show password for account
 6. Change password for account
 7. Delete account from site
