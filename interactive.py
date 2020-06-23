@@ -8,38 +8,6 @@ from getpass import getpass
 
 
 def general():
-    """choose function"""
-
-    def start_list_site_accounts():
-        """input site name"""
-        # site = ""
-        """check site exist"""
-        # vault.list_site_accounts(site)
-        print("List site's accounts")
-
-    def start_add_new_site():
-        """input site name"""
-        # site = ""
-        # vault.add_site(site)
-        print("adding site")
-
-    def start_add_new_account():
-        """input account"""
-        # account = ""
-        # vault.add_account(account)
-        print("Adding account")
-
-    def start_show_passwd_for_account():
-        print("show passwd")
-
-    def start_change_passwd_for_account():
-        print("change passwd")
-
-    def start_del_acc():
-        print("dell acc")
-
-    def start_del_site():
-        print("del site")
 
     def exit_from_vault():
         print("Bye bye!")
@@ -84,14 +52,33 @@ def general():
 
         def start_swich_func(inputed_func):
             func = switcher.get(inputed_func, "error")
-            func()
+            try:
+                func(my_private_key)
+            except TypeError:
+                print("Function that you enter does not exist. Try again.")
+                return False
+            else:
+                return True
 
-        try:
-            input_func = int(input("Choose needed function:  "))
-        except KeyboardInterrupt:
-            print(static.KEYBOARD_INTERRUPT_MESSAGE)
-            exit()
-        else:
-            start_swich_func(input_func)
+        def input_chosen_func():
+            attempts_count = 1
+            while attempts_count <= 3:
+                try:
+                    input_func = int(input("Choose needed function:  "))
+                except KeyboardInterrupt:
+                    print(static.KEYBOARD_INTERRUPT_MESSAGE)
+                    exit()
+                except ValueError:
+                    print("Error! You enter not int argument. Try again")
+                    attempts_count += 1
+                else:
+                    if start_swich_func(input_func):
+                        break
+                    else:
+                        attempts_count += 1
+                        continue
+            else:
+                print("You enter wrong argument 3 times. Exiting")
+                exit()
 
-
+        input_chosen_func()
