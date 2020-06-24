@@ -3,13 +3,23 @@
 import static
 import global_variables
 import vault
+from os import system, name
 from Crypto.PublicKey import RSA
 from getpass import getpass
 
 
 def general():
 
-    def exit_from_vault():
+    def clear():
+        # for windows
+        if name == 'nt':
+            _ = system('cls')
+        # for mac and linux
+        else:
+            _ = system('clear')
+
+    def exit_from_vault(private_key):
+        del private_key
         print("Bye bye!")
         exit()
 
@@ -36,17 +46,18 @@ def general():
         exit()
 
     while True:
+        clear()
         print(static.MENU)
 
         switcher = {
             1: vault.list_sites,
-            2: start_list_site_accounts,
-            3: start_add_new_account,
-            4: start_add_new_site,
-            5: start_show_passwd_for_account,
-            6: start_change_passwd_for_account,
-            7: start_del_acc,
-            8: start_del_site,
+            2: vault.list_site_accounts,
+            3: vault.add_account,
+            4: vault.add_site,
+            5: vault.show_passwd,
+            6: vault.change_passwd,
+            7: vault.del_account,
+            8: vault.del_site,
             9: exit_from_vault
         }
 
